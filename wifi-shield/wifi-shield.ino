@@ -315,6 +315,6 @@ void loop()
     scrollText(&offset_Pswd, Pswd_text_px_width, 1);
     scrollText(&offset_IP_Port, IP_Port_total_px_width, 1);
 
-    /* HW SPI is a lot faster than SW SPI, so small delay is necessary */
+    /* HW I2C is a lot faster than SW I2C, so small delay is necessary */
     delay(10);
 }
