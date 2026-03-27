@@ -243,8 +243,8 @@ void setup()
     u8g2.setFont(FONT_REGULAR); // set the target font to calculate the pixel width
     SSID_text_px_width = u8g2.getStrWidth(ssid) + PADDING;
     Pswd_text_px_width = u8g2.getStrWidth(password) + PADDING;
-    IP_text_px_width = u8g2.getStrWidth(ip);
-    Port_text_px_width = u8g2.getStrWidth(port);
+    IP_text_px_width = u8g2.getStrWidth(ip) + PADDING;
+    Port_text_px_width = u8g2.getStrWidth(port) + PADDING;
 
     u8g2.setFont(FONT_BOLD); // set the target font to calculate the pixel width
     SSID_label_px_width = u8g2.getStrWidth(SSID_label);
@@ -252,10 +252,10 @@ void setup()
     IP_label_px_width = u8g2.getStrWidth(IP_label);
     Port_label_px_width = u8g2.getStrWidth(Port_label);
 
-    IP_Port_total_px_width = IP_label_px_width + IP_text_px_width + PADDING + Port_label_px_width + Port_text_px_width + PADDING;
+    IP_Port_total_px_width = IP_label_px_width + IP_text_px_width + Port_label_px_width + Port_text_px_width;
 }
 
-/* MAIN LOOP (REPEATS INDEFINITELY) *******************************************/
+/*** MAIN LOOP (REPEATS INDEFINITELY) *****************************************/
 
 void loop()
 {
@@ -297,9 +297,9 @@ void loop()
         u8g2.setFont(FONT_REGULAR);
         u8g2.drawStr(x_IP_Port + IP_label_px_width, LINE3_Y, ip);
         u8g2.setFont(FONT_BOLD);
-        u8g2.drawStr(x_IP_Port + IP_label_px_width + IP_text_px_width + PADDING, LINE3_Y, Port_label);
+        u8g2.drawStr(x_IP_Port + IP_label_px_width + IP_text_px_width, LINE3_Y, Port_label);
         u8g2.setFont(FONT_REGULAR);
-        u8g2.drawStr(x_IP_Port + IP_label_px_width + IP_text_px_width + PADDING + Port_label_px_width, LINE3_Y, port);
+        u8g2.drawStr(x_IP_Port + IP_label_px_width + IP_text_px_width + Port_label_px_width, LINE3_Y, port);
         x_IP_Port += IP_Port_total_px_width;
     } while
     (
