@@ -58,7 +58,7 @@ IPAddress subnet(255, 255, 255, 0);
 U8G2_SSD1306_128X32_UNIVISION_F_HW_I2C u8g2
 (
     U8G2_R0,       /* No rotation, landscape */
-    SCL,           /* I2C clock pin*/
+    SCL,           /* I2C clock pin */
     SDA,           /* I2C data pin */
     U8X8_PIN_NONE  /* No reset pin */
 );
