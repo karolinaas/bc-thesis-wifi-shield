@@ -22,6 +22,8 @@
 #define TX1PIN 4
 #define RX1PIN 5
 
+uint32_t pkt_div = 0xDEADBEEF;
+
 /*** NETWORK CONFIGURATION ****************************************************/
 
 const char *ssid = "BcPraceSebestova";       // WiFi network name
@@ -216,6 +218,7 @@ void setup()
 
             /* Forward packet data to the main board via UART */
             Serial1.write(packet.data(), packet.length());
+            Serial1.write((uint8_t *)&pkt_div, sizeof(pkt_div));
         });
     }
 
